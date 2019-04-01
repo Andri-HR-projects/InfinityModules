@@ -6,6 +6,8 @@ class CartoonNetworkSpinner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // Pokemon was on Cartoon Network from 2000-2016
+      // https://pokemon.fandom.com/wiki/Cartoon_Network
       images: [
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png',
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png',
@@ -18,17 +20,17 @@ class CartoonNetworkSpinner extends React.Component {
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png',
       ],
       currentImageIndex: 0,
-      spinning: false,
+      isSpinning: false,
     };
   }
 
   componentDidMount() {
     const { interval } = this.props;
-    setInterval(() => this.changeImage(), interval * 1000);
-    setInterval(() => this.toggleSpinning(), interval * 1000);
+    setInterval(() => this.Spin(), interval * 1000);
+    setInterval(() => this.updateImage(), interval * 1000);
   }
 
-  changeImage() {
+  updateImage() {
     const { images, currentImageIndex } = this.state;
     if (currentImageIndex === images.length - 1) {
       this.setState({ currentImageIndex: 0 });
@@ -37,16 +39,16 @@ class CartoonNetworkSpinner extends React.Component {
     }
   }
 
-  toggleSpinning() {
-    const { spinning } = this.state;
-    this.setState({ spinning: !spinning });
+  Spin() {
+    const { isSpinning } = this.state;
+    this.setState({ isSpinning: !isSpinning });
   }
 
   render() {
-    const { images, currentImageIndex, spinning } = this.state;
+    const { images, currentImageIndex, isSpinning } = this.state;
     return (
       <div
-        className={`spinnerContainer ${spinning ? 'spin' : ''}`}
+        className={`spinner--container ${isSpinning ? 'spin' : ''}`}
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       />
     );

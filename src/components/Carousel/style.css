@@ -1,40 +1,78 @@
 .small {
-  max-width: 200px;
-}
-
-.medium {
   max-width: 400px;
 }
-
-.large {
+.small .carousel__image {
+  width: 150px
+}
+.medium {
   max-width: 600px;
 }
-
-.carouselContainer {
+.medium .carousel__image {
+  width: 200px
+}
+.large {
+  max-width: 800px;
+}
+.large .carousel__image {
+  width: 300px
+}
+.carousel__container{
+  border-radius: 6px;
   margin: 0 100px;
   padding: 0;
   position: relative;
   display: inline-block;
+	border: solid 2px #d3d3d3;
+	background-image: radial-gradient(#85de8c , #72be73 );
+}
+.image__container {
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.carouselImg {
+.carousel__image {
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.prevButton, .nextButton {
-  width: 20px;
-  position: absolute;
-  top: 0;
-  bottom: 4px;
-  background-color: rgba(0, 0, 0, .3);
+.shit{
+  color: aquamarine;
+}
+.btn{
+	position: absolute;
+	color: white;
+	border-radius: 20px;
+	background: none;
+	font-weight: bold;
+	border: none;
+	width: 40px;
+	height: 30px;
+	font-size: 36px;
+  text-align: center;
 }
 
-.prevButton {
-  left: -20px;
+.btn.btn--center{
+  top: calc( 50% - 20px );
 }
 
-.nextButton {
-  right: -20px;
+.btn:hover{
+	cursor: pointer;
+	color: #ccc;
+}
+
+.btn:focus{
+	color: #aaa;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+.btn--prev {
+  left: 5px;
+}
+
+.btn--next {
+  right: 5px;
 }

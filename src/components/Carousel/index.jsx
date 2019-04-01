@@ -6,45 +6,44 @@ class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImage: 0,
+      imageIndex: 0,
     };
   }
 
-  prevImage() {
-    const { currentImage } = this.state;
+  changeImage(change) {
+    const { imageIndex } = this.state;
     const { images } = this.props;
-    if (currentImage === 0) {
-      this.setState({ currentImage: images.length - 1 });
+    if (imageIndex === 0 && change === -1) {
+      this.setState({ imageIndex: images.length - 1 });
+    } else if (imageIndex === images.length - 1 && change === 1) {
+      this.setState({ imageIndex: 0 });
     } else {
-      this.setState({ currentImage: currentImage - 1 });
-    }
-  }
-
-  nextImage() {
-    const { currentImage } = this.state;
-    const { images } = this.props;
-    if (currentImage === images.length - 1) {
-      this.setState({ currentImage: 0 });
-    } else {
-      this.setState({ currentImage: currentImage + 1 });
+      this.setState({ imageIndex: imageIndex + change });
     }
   }
 
   render() {
-    const { currentImage } = this.state;
+    const { imageIndex } = this.state;
     const { images, size } = this.props;
     return (
-      <div className={`carouselContainer ${size}`}>
-        <button type="button" className="prevButton" onClick={() => this.prevImage()}>
-          {' '}
-          &lt;
-          {' '}
+      <div className={`carousel__container ${size}`}>
+        <button
+          type="button"
+          className="btn btn--center btn--prev"
+          onClick={() => this.changeImage(-1)}
+        >
+          &lsaquo;
         </button>
-        <img className="carouselImg" src={images[currentImage]} alt="currentImage" />
-        <button type="button" className="nextButton" onClick={() => this.nextImage()}>
-          {' '}
-          &gt;
-          {' '}
+        <div className="image__container">
+          <img className="carousel__image" src={images[imageIndex]} alt="current carousel" />
+        </div>
+
+        <button
+          type="button"
+          className="btn btn--center btn--next"
+          onClick={() => this.changeImage(1)}
+        >
+          &rsaquo;
         </button>
       </div>
     );
@@ -52,7 +51,7 @@ class Carousel extends React.Component {
 }
 
 Carousel.propTypes = {
-  images: PropTypes.array.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
