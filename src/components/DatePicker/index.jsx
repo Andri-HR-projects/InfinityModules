@@ -1,8 +1,22 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
 import moment from 'moment';
+import {
+  calendar,
+  calendarHeader,
+  calendarHeaderTitle,
+  btn,
+  btnLeft,
+  btnRight,
+  btnLeftMid,
+  btnRightMid,
+  lower,
+  weekdaysStyle,
+  days,
+  currentPick,
+  today,
+} from './style.module.css';
 
 class DatePicker extends React.Component {
   constructor(props) {
@@ -15,20 +29,20 @@ class DatePicker extends React.Component {
 
   checkIfActiveDay(year, month, day) {
     if (this.checkDate(year, month, day)) {
-      return 'currentPick';
+      return currentPick;
     }
     if (moment().isSame(new Date(year, month - 1, day), 'date')) {
-      return 'today';
+      return today;
     }
     return '';
   }
 
   checkDate(year, month, day) {
     const { selectedDate } = this.state;
-    const years = selectedDate.format('YYYY') === year;
-    const months = selectedDate.format('M') === month;
-    const days = selectedDate.format('D') === day.toString();
-    return years && months && days;
+    const boolYears = selectedDate.format('YYYY') === year;
+    const boolMonths = selectedDate.format('M') === month;
+    const boolDays = selectedDate.format('D') === day.toString();
+    return boolYears && boolMonths && boolDays;
   }
 
   selectDate(date) {
@@ -43,40 +57,40 @@ class DatePicker extends React.Component {
     const month = currentDate.format('M');
     const firstDay = new Date(year, month - 1, 0).getDay();
     return (
-      <div className="calendar">
-        <div className="calendar__header">
+      <div className={`${calendar}`}>
+        <div className={`${calendarHeader}`}>
           <button
             type="button"
-            className="btn btn--left"
+            className={`${btn} ${btnLeft} `}
             onClick={() => this.setState({ currentDate: currentDate.subtract('year', 1) })}
           >
             &#x226A;
           </button>
           <button
             type="button"
-            className="btn btn--left--mid lower"
+            className={`${btn} ${btnLeftMid} ${lower}`}
             onClick={() => this.setState({ currentDate: currentDate.subtract('month', 1) })}
           >
             &lsaquo;
           </button>
-          <p className="calendar__header--title">{currentDate.format('MMMM YYYY')}</p>
+          <p className={`${calendarHeaderTitle}`}>{currentDate.format('MMMM YYYY')}</p>
           <button
             type="button"
-            className="btn btn--right--mid lower"
+            className={`${btn} ${btnRightMid} ${lower}`}
             onClick={() => this.setState({ currentDate: currentDate.add('month', 1) })}
           >
             &rsaquo;
           </button>
           <button
             type="button"
-            className="btn btn--right"
+            className={`${btn} ${btnRight} `}
             onClick={() => this.setState({ currentDate: currentDate.add('year', 1) })}
           >
             &#x226B;
           </button>
         </div>
 
-        <ul className="weekdays">
+        <ul className={`${weekdaysStyle} `}>
           <li>Mo</li>
           <li>Tu</li>
           <li>We</li>
@@ -86,7 +100,7 @@ class DatePicker extends React.Component {
           <li>Su</li>
         </ul>
 
-        <ul className="days">
+        <ul className={`${days} `}>
           {[...Array(firstDay)].map((d, i) => (
             <li key={i} />
           ))}

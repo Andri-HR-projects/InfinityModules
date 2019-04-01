@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import { colContainer } from './style.module.css';
 
-const Col = ({ size }) => <div className="colContainer">{`Col-${size}`}</div>;
+const Col = ({ size }) => <div className={`${colContainer}`}>{`Col-${size}`}</div>;
 
 Col.propTypes = {
   size: PropTypes.number,

@@ -1,7 +1,7 @@
 .calendar{
 	width: 500px;
 }
-.calendar__header{
+.calendarHeader{
 	position: relative;
 	height: 50px;
 	background-image: radial-gradient(#85de8c , #72be73 );
@@ -10,14 +10,14 @@
 	line-height: 50px;
 	font-size: 36px;
 }
-.calendar__header--title{
+.calendarHeaderTitle{
 	margin: 0;
 }
-.weekdays {
+.weekdaysStyle {
 	padding: 0
 }
 
-.weekdays li {
+.weekdaysStyle li {
 	display: inline-block;
 	width: 14.2%;
 	text-align: center;
@@ -83,19 +83,19 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
-.btn--left{
+.btnLeft{
 	left: 10px;
 
 }
-.btn--left--mid{
+.btnLeftMid{
 	left: 50px;
 
 }
-.btn--right{
+.btnRight{
 	right: 10px;
 
 }
-.btn--right--mid{
+.btnRightMid{
 	right: 50px;
 
 }

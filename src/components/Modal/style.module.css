@@ -1,4 +1,4 @@
-.modal__overlay{
+.modalOverlay{
 	display:flex;
 	justify-content: center;
 	align-items:center;
@@ -33,14 +33,14 @@
 	animation-iteration-count: 1;
 	box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
-.modal--child:first-child{
+.modalChild:first-child{
 	border-radius: 6px 6px 0 0;
 }
-.modal--child:last-child{
+.modalChild:last-child{
 	border-radius: 0 0 6px 6px;
 }
 
-.modal__title{
+.modalTitle{
 	height: 30px;
 	padding: 20px;
 	text-align: center;
@@ -48,29 +48,29 @@
 	color:white;
 	background-image: radial-gradient(#85de8c , #72be73 );
 }
-.modal__close{
+.modalClose{
 	position: absolute;
 	top: 0px;
 	right: 10px;
 	font-size: 28px;
 	color: #fff
 }
-.modal__close:hover{
+.modalClose:hover{
 	cursor: pointer;
 	color: #ccc
 }
-.modal__close:focus{
+.modalClose:focus{
 	color: #aaa;
 	outline: none;
 }
 
-.modal__body{
+.modalBody{
 	padding: 20px;
 	height: 190px;
 	background-color: #fff
 }
 
-.modal__footer{
+.modalFooter{
 	text-align: end;
 	padding: 20px;
 	height: 50px;

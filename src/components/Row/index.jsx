@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import { row, column } from './style.module.css';
 
 class Row extends Component {
   // eslint-disable-next-line class-methods-use-this
@@ -12,11 +12,11 @@ class Row extends Component {
   render() {
     const { children } = this.props;
     return (
-      <div className="row">
+      <div className={`${row}`}>
         {children.map((child, i) => {
           const cWidth = this.calculatePercentage(child.props.size);
           return (
-            <div className="column" key={i} style={{ width: `calc(${cWidth}% - 2px)` }}>
+            <div className={`${column}`} key={i} style={{ width: `calc(${cWidth}% - 2px)` }}>
               {child}
             </div>
           );

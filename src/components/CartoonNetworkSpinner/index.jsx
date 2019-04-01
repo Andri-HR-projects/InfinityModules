@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import { spinnerContainer, spin } from './style.module.css';
 
 class CartoonNetworkSpinner extends React.Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class CartoonNetworkSpinner extends React.Component {
     const { images, currentImageIndex, isSpinning } = this.state;
     return (
       <div
-        className={`spinner--container ${isSpinning ? 'spin' : ''}`}
+        className={`${spinnerContainer} ${isSpinning ? spin : ''}`}
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       />
     );

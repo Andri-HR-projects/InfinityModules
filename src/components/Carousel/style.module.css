@@ -1,22 +1,22 @@
 .small {
   max-width: 400px;
 }
-.small .carousel__image {
+.small .carouselImage {
   width: 150px
 }
 .medium {
   max-width: 600px;
 }
-.medium .carousel__image {
+.medium .carouselImage {
   width: 200px
 }
 .large {
   max-width: 800px;
 }
-.large .carousel__image {
+.large .carouselImage {
   width: 300px
 }
-.carousel__container{
+.carouselContainer{
   border-radius: 6px;
   margin: 0 100px;
   padding: 0;
@@ -25,20 +25,17 @@
 	border: solid 2px #d3d3d3;
 	background-image: radial-gradient(#85de8c , #72be73 );
 }
-.image__container {
+.imageContainer {
   white-space: nowrap;
   overflow: hidden;
 }
 
-.carousel__image {
+.carouselImage {
   margin: 0;
   padding: 0;
   border: none;
 }
 
-.shit{
-  color: aquamarine;
-}
 .btn{
 	position: absolute;
 	color: white;
@@ -52,7 +49,7 @@
   text-align: center;
 }
 
-.btn.btn--center{
+.btn.btnCenter{
   top: calc( 50% - 20px );
 }
 
@@ -69,10 +66,10 @@
 }
 
 
-.btn--prev {
+.btnPrev {
   left: 5px;
 }
 
-.btn--next {
+.btnNext {
   right: 5px;
 }
