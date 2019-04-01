@@ -56,7 +56,7 @@ class App extends Component {
         <h1>{date}</h1>
 
         <h1>CartoonNetworkSpinner</h1>
-        <CartoonNetworkSpinner interval={2} />
+        <CartoonNetworkSpinner interval={1} />
       </div>
     );
   }

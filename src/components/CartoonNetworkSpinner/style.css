@@ -1,0 +1,13 @@
+.spinnerContainer{
+	height: 200px;
+	width: 200px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 1s;
+	transform-origin: center;
+	/* transition-property: all; */
+}
+.spin{
+	transform: rotate(360deg);
+}

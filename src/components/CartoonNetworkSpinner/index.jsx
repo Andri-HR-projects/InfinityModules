@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { spinnerContainer, spin } from './style.css';
+import './style.css';
 
 class CartoonNetworkSpinner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [''],
+      images: [
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/197.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/196.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/471.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png',
+      ],
       currentImageIndex: 0,
       spinning: false,
     };
@@ -36,7 +46,7 @@ class CartoonNetworkSpinner extends React.Component {
     const { images, currentImageIndex, spinning } = this.state;
     return (
       <div
-        className={`${spinnerContainer} ${spinning ? spin : ''}`}
+        className={`spinnerContainer ${spinning ? 'spin' : ''}`}
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}
       />
     );
