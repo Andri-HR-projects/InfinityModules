@@ -1,0 +1,40 @@
+.small {
+  max-width: 200px;
+}
+
+.medium {
+  max-width: 400px;
+}
+
+.large {
+  max-width: 600px;
+}
+
+.carouselContainer {
+  margin: 0 100px;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.carouselImg {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.prevButton, .nextButton {
+  width: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 4px;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.prevButton {
+  left: -20px;
+}
+
+.nextButton {
+  right: -20px;
+}
