@@ -40,14 +40,16 @@ class Carousel extends React.Component {
     const { images, size } = this.props;
     return (
       <div className={`${carouselContainer} ${styles[`carousel-${size}`]}`}>
-        <button className={carouselButtonLeft} onClick={() => this.previousImage()}>
+        <button type="button" className={carouselButtonLeft} onClick={() => this.previousImage()}>
           {' '}
-          &lt;{' '}
+          &lt;
+          {' '}
         </button>
         <img className={carouselImage} src={images[currentImageIndex]} alt="currentImage" />
-        <button className={carouselButtonRight} onClick={() => this.nextImage()}>
+        <button type="button" className={carouselButtonRight} onClick={() => this.nextImage()}>
           {' '}
-          &gt;{' '}
+          &gt;
+          {' '}
         </button>
       </div>
     );

@@ -1,0 +1,107 @@
+.calendar{
+	width: 500px;
+}
+.calendar__header{
+	position: relative;
+	height: 50px;
+	background-image: radial-gradient(#85de8c , #72be73 );
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-size: 36px;
+}
+.calendar__header--title{
+	margin: 0;
+}
+.weekdays {
+	padding: 0
+}
+
+.weekdays li {
+	display: inline-block;
+	width: 14.2%;
+	text-align: center;
+	font-size: 28px;
+}
+
+.days {
+	padding: 0
+}
+
+.days li {
+	display: inline-block;
+	width: 14.2%;
+	text-align: center;
+	height: 50px;
+}
+.days li button {
+	font-size: 28px;
+	border-radius: 4px;
+	border: none;
+	width: 45px;
+	height: 45px;
+}
+
+.days li:hover button{
+	background-image: radial-gradient(#fff , #eee );
+}
+
+.currentPick{
+	background-image: radial-gradient(#85de8c , #72be73 );
+}
+.today{
+	background-image: radial-gradient(#aaa , #ccc );
+}
+
+
+.btn{
+	position: absolute;
+	top: 0;
+	color: white;
+	border-radius: 20px;
+	background: none;
+	font-weight: bold;
+	border: none;
+	width: 40px;
+	height: 30px;
+	font-size: 36px;
+	text-align: center;
+}
+.lower{
+	top: -1px;
+}
+
+.btn:hover{
+	cursor: pointer;
+}
+
+.btn:focus{
+	/* border: 2px solid #aaa; */
+	color: #aaa;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+	-webkit-tap-highlight-color: transparent;
+}
+
+.btn--left{
+	left: 10px;
+
+}
+.btn--left--mid{
+	left: 50px;
+
+}
+.btn--right{
+	right: 10px;
+
+}
+.btn--right--mid{
+	right: 50px;
+
+}
+.leftButton:focus, .rightButton:focus{
+	outline: none;
+}
+.leftButton:hover, .rightButton:hover{
+	color: rgb(209, 209, 209);
+}
