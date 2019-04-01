@@ -1,0 +1,12 @@
+
+
+.column{
+	margin: 0;
+	display: inline-block;
+	background-color: #85de8c;
+	border: 1px solid #69685d;
+}
+
+.column:nth-child(odd){
+	background-color: #72be73
+}

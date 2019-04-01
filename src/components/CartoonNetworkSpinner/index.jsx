@@ -11,11 +11,13 @@ class CartoonNetworkSpinner extends React.Component {
       spinning: false,
     };
   }
+
   componentDidMount() {
     const { interval } = this.props;
     setInterval(() => this.changeImage(), interval * 1000);
     setInterval(() => this.toggleSpinning(), interval * 1000);
   }
+
   changeImage() {
     const { images, currentImageIndex } = this.state;
     if (currentImageIndex === images.length - 1) {
@@ -24,6 +26,7 @@ class CartoonNetworkSpinner extends React.Component {
       this.setState({ currentImageIndex: currentImageIndex + 1 });
     }
   }
+
   toggleSpinning() {
     const { spinning } = this.state;
     this.setState({ spinning: !spinning });

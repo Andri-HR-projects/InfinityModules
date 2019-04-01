@@ -5,18 +5,24 @@ import Row from './Row';
 import Col from './Col';
 import DatePicker from './DatePicker';
 import CartoonNetworkSpinner from './CartoonNetworkSpinner';
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { isModalOpen: false, isClockOpen: false, time: new Date(), date: '', tab: 1 };
+    this.state = {
+      isModalOpen: false,
+      date: '',
+    };
   }
+
   render() {
-    const { isModalOpen } = this.state;
-    console.log(this.state.tab);
+    const { isModalOpen, date } = this.state;
     return (
       <div>
         <h1>Modal</h1>
-        <button onClick={() => this.setState({ isModalOpen: true })}>Open modal</button>
+        <button type="button" onClick={() => this.setState({ isModalOpen: true })}>
+          Open modal
+        </button>
         <Modal isOpen={isModalOpen} onClose={() => this.setState({ isModalOpen: false })}>
           <Modal.Title>ModalTitle</Modal.Title>
           <Modal.Body>ModalBody</Modal.Body>
@@ -46,8 +52,8 @@ class App extends Component {
         </Row>
 
         <h1>Date Picker</h1>
-        <DatePicker onDatePick={date => this.setState({ date: date })} locale="is-IS" />
-        <h1>{this.state.date} </h1>
+        <DatePicker onDatePick={date => this.setState({ date })} locale="is-IS" />
+        <h1>{date}</h1>
 
         <h1>CartoonNetworkSpinner</h1>
         <CartoonNetworkSpinner interval={2} />
