@@ -73,10 +73,10 @@
 
 .btn:hover{
 	cursor: pointer;
+	color: #ccc;
 }
 
 .btn:focus{
-	/* border: 2px solid #aaa; */
 	color: #aaa;
 	outline: none;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 

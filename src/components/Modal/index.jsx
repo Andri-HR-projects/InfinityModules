@@ -4,19 +4,30 @@ import './style.css';
 
 const Modal = ({ isOpen, onClose, children }) => (
   <div
-    className={`modalOverlay ${isOpen ? '' : 'hidden'}`}
+    className={`modal__overlay ${isOpen ? '' : 'hidden'}`}
     onClick={onClose}
     role="button"
     tabIndex="0"
     onKeyPress={() => {}}
   >
-    <div className="modal">{children}</div>
+    <div className="modal">
+      <div
+        className="modal__close"
+        onClick={onClose}
+        role="button"
+        tabIndex="0"
+        onKeyPress={() => {}}
+      >
+        &times;
+      </div>
+      {children}
+    </div>
   </div>
 );
 
-Modal.Title = ({ children }) => <div className="modalTitle">{children}</div>;
-Modal.Body = ({ children }) => <div className="modalBody">{children}</div>;
-Modal.Footer = ({ children }) => <div className="modalFooter">{children}</div>;
+Modal.Title = ({ children }) => <div className="modal--child modal__title">{children}</div>;
+Modal.Body = ({ children }) => <div className="modal--child modal__body">{children}</div>;
+Modal.Footer = ({ children }) => <div className="modal--child modal__footer">{children}</div>;
 
 Modal.propTypes = {
   isOpen: PropTypes.bool,

@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 import './style.css';
 import moment from 'moment';
 
-const monthDays = function (date) {
-  const d = new Date(date.format('YYY'), date.format('MM') + 1, 0);
-  return d.getDate();
-};
-
 class DatePicker extends React.Component {
   constructor(props) {
     super(props);
@@ -46,7 +41,7 @@ class DatePicker extends React.Component {
     const { currentDate } = this.state;
     const year = currentDate.format('Y');
     const month = currentDate.format('M');
-    const firstDay = new Date(year, month, 0).getDay();
+    const firstDay = new Date(year, month - 1, 0).getDay();
     return (
       <div className="calendar">
         <div className="calendar__header">
@@ -95,7 +90,7 @@ class DatePicker extends React.Component {
           {[...Array(firstDay)].map((d, i) => (
             <li key={i} />
           ))}
-          {[...Array(monthDays(currentDate))].map((d, i) => (
+          {[...Array(currentDate.daysInMonth())].map((d, i) => (
             <li>
               <button
                 type="button"
