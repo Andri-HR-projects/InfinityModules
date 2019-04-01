@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import Modal from './Modal';
 import Carousel from './Carousel';
