@@ -1,52 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles, {
-  carouselContainer,
-  carouselImage,
-  carouselButtonLeft,
-  carouselButtonRight,
-} from './style.css';
+import './style.css';
 
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentImageIndex: 0,
+      currentImage: 0,
     };
   }
 
-  previousImage() {
-    const { currentImageIndex } = this.state;
+  prevImage() {
+    const { currentImage } = this.state;
     const { images } = this.props;
-    if (currentImageIndex === 0) {
-      this.setState({ currentImageIndex: images.length - 1 });
+    if (currentImage === 0) {
+      this.setState({ currentImage: images.length - 1 });
     } else {
-      this.setState({ currentImageIndex: currentImageIndex - 1 });
+      this.setState({ currentImage: currentImage - 1 });
     }
   }
 
   nextImage() {
-    const { currentImageIndex } = this.state;
+    const { currentImage } = this.state;
     const { images } = this.props;
-    if (currentImageIndex === images.length - 1) {
-      this.setState({ currentImageIndex: 0 });
+    if (currentImage === images.length - 1) {
+      this.setState({ currentImage: 0 });
     } else {
-      this.setState({ currentImageIndex: currentImageIndex + 1 });
+      this.setState({ currentImage: currentImage + 1 });
     }
   }
 
   render() {
-    const { currentImageIndex } = this.state;
+    const { currentImage } = this.state;
     const { images, size } = this.props;
     return (
-      <div className={`${carouselContainer} ${styles[`carousel-${size}`]}`}>
-        <button type="button" className={carouselButtonLeft} onClick={() => this.previousImage()}>
+      <div className={`carouselContainer ${size}`}>
+        <button type="button" className="prevButton" onClick={() => this.prevImage()}>
           {' '}
           &lt;
           {' '}
         </button>
-        <img className={carouselImage} src={images[currentImageIndex]} alt="currentImage" />
-        <button type="button" className={carouselButtonRight} onClick={() => this.nextImage()}>
+        <img className="carouselImg" src={images[currentImage]} alt="currentImage" />
+        <button type="button" className="nextButton" onClick={() => this.nextImage()}>
           {' '}
           &gt;
           {' '}
