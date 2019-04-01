@@ -52,7 +52,7 @@
   text-align: center;
 }
 
-.btn.btn--center{
+.btn.btnCenter{
   top: calc( 50% - 20px );
 }
 
@@ -69,10 +69,10 @@
 }
 
 
-.btn--prev {
+.btnPrev {
   left: 5px;
 }
 
-.btn--next {
+.btnNext {
   right: 5px;
 }

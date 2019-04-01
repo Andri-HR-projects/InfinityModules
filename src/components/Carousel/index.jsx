@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import styles from './Carousel.module.css';
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -26,21 +26,21 @@ class Carousel extends React.Component {
     const { imageIndex } = this.state;
     const { images, size } = this.props;
     return (
-      <div className={`carousel__container ${size}`}>
+      <div className={`${styles.carousel__container} ${styles[size]}`}>
         <button
           type="button"
-          className="btn btn--center btn--prev"
+          className={`${styles.btn} ${styles.btnCenter} ${styles.btnPrev}`}
           onClick={() => this.changeImage(-1)}
         >
           &lsaquo;
         </button>
-        <div className="image__container">
-          <img className="carousel__image" src={images[imageIndex]} alt="current carousel" />
+        <div className={`${styles.image__container}`}>
+          <img className={`${styles.carousel__image}`} src={images[imageIndex]} alt="current carousel" />
         </div>
 
         <button
           type="button"
-          className="btn btn--center btn--next"
+          className={`${styles.btn} ${styles.btnCenter} ${styles.btnNext}`}
           onClick={() => this.changeImage(1)}
         >
           &rsaquo;
